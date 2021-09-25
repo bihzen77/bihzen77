@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: jaffle_shop_customers
+    description: Raw customers data.
+    database: key-acre-326416
+    tables:
+      - name: jaffle_shop_customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: jaffle_shop_orders
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 0, period: hour}
+          error_after: {count: 0, period: hour}
+        columns:
+          - name: id
+
