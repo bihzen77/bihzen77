@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: jaffle_shop_customers
-    database: key-acre-326416
-    tables:
-      - name: jaffle_shop_customers
-      - name: jaffle_shop_orders
-
